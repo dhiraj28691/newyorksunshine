@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
+  revision: 29807a6a995ffd5fc51de5d785d04e92445ae099
+  specs:
+    spree_newyorksunshine (2.2.1)
+      spree_core (~> 2.2.1)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 6469c80cbb8f7bd09fe302c2d0e7fdcb187e38de
   branch: 2-2-stable
@@ -279,5 +286,6 @@ DEPENDENCIES
   spree (= 2.2.1)
   spree_auth_devise!
   spree_gateway!
+  spree_newyorksunshine!
   turbolinks
   uglifier (>= 1.3.0)
