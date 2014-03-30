@@ -48,4 +48,4 @@ gem 'spree', '2.2.1'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 
-gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine'
+gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'master'
