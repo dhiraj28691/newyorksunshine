@@ -271,6 +271,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  money (= 6.0.1)
   pg
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)
