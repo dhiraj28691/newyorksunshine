@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: 362da87225bedd8e1a75e174632dc2945dc8f806
+  revision: 5ff0467a4c4a6319fd7404bfd52ee831d2be8e69
   branch: master
   specs:
     spree_newyorksunshine (2.2.1)
@@ -69,6 +69,8 @@ GEM
       activerecord (>= 3.0)
     arel (4.0.2)
     atomic (1.1.16)
+    autoprefixer-rails (1.1.20140327)
+      execjs
     awesome_nested_set (3.0.0.rc.3)
       activerecord (>= 4.0.0, < 5)
     aws-sdk (1.27.0)
@@ -276,6 +278,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails

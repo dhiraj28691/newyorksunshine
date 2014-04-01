@@ -53,3 +53,5 @@ gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine'
 
 # bug in money gem, use latest
 gem 'money', '6.0.1'
+
+gem 'autoprefixer-rails'
