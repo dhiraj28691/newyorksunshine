@@ -11,7 +11,7 @@ Spree.config do |config|
   config.site_name = "New York Sunshine"
   config.allow_ssl_in_production = false
 
-  config.products_per_page = 9
+  config.products_per_page = 12
 
 
 
