@@ -55,3 +55,7 @@ gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine'
 gem 'money', '6.0.1'
 
 gem 'autoprefixer-rails'
+
+
+gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-2-stable'
+
