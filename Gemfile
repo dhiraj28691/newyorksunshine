@@ -59,3 +59,4 @@ gem 'autoprefixer-rails'
 
 gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-2-stable'
 
+gem 'mailchimp-api'
