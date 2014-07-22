@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '~> 4.1.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -44,9 +44,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'spree', '2.2.1'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
+gem 'spree', '2.3.1'
+
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-3-stable'
 
 gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'dev'
 
@@ -57,6 +58,6 @@ gem 'money', '6.0.1'
 gem 'autoprefixer-rails'
 
 
-gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-2-stable'
+gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-3-stable'
 
 gem 'mailchimp-api'
