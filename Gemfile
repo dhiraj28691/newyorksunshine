@@ -21,6 +21,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -45,9 +47,8 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'spree', '2.3.1'
-
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-3-stable'
+gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '2-3-stable'
+gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '2-3-stable'
 
 gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'dev'
 
@@ -61,3 +62,7 @@ gem 'autoprefixer-rails'
 gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-3-stable'
 
 gem 'mailchimp-api'
+
+gem 'simple_form'
+gem 'cocoon'
+

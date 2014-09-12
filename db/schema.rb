@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722005862) do
+ActiveRecord::Schema.define(version: 20140912175739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lookbooks", force: true do |t|
+    t.string  "name"
+    t.string  "slug"
+    t.text    "content"
+    t.date    "available_on"
+    t.boolean "published"
+  end
+
+  add_index "lookbooks", ["slug"], name: "index_lookbooks_on_slug", using: :btree
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -331,6 +341,34 @@ ActiveRecord::Schema.define(version: 20140722005862) do
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id", using: :btree
   add_index "spree_payments", ["payment_method_id"], name: "index_spree_payments_on_payment_method_id", using: :btree
   add_index "spree_payments", ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type", using: :btree
+
+  create_table "spree_post_images", force: true do |t|
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "spree_post_id"
+    t.integer  "post_id"
+  end
+
+  add_index "spree_post_images", ["post_id"], name: "index_spree_post_images_on_post_id", using: :btree
+  add_index "spree_post_images", ["spree_post_id"], name: "index_spree_post_images_on_spree_post_id", using: :btree
+
+  create_table "spree_posts", force: true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.datetime "published_on"
+    t.string   "link_url"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "embed_code"
+  end
+
+  add_index "spree_posts", ["slug"], name: "index_spree_posts_on_slug", using: :btree
 
   create_table "spree_preferences", force: true do |t|
     t.text     "value"

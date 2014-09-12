@@ -29,24 +29,11 @@ Newyorksunshine::Application.configure do
 
   # Paperclip S3 settings
   config.paperclip_defaults = {
-    :storage => :s3,
     :s3_credentials => {
       :bucket => 'newyorksunshine-development',
       :access_key_id => 'AKIAI5Z5EMPYNPX2G4BA',
       :secret_access_key => '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'
-    },
-    :styles => {
-      :mini => '80x50#',
-      :small => '160x100#',
-      :product => '480x300#',
-      :large => '1280x800#'
-    },
-
-    :url => "/assets/products/:id/:style/:basename.:extension",
-    # :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
-    :path => "products/:id/:style/:basename.:extension"
-    # :s3_host_alias => 'd128p8m2elw7gi.cloudfront.net'
-
+    }
   }
 
 end
