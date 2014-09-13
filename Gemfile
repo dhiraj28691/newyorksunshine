@@ -67,3 +67,6 @@ gem 'mailchimp-api'
 gem 'simple_form'
 gem 'cocoon'
 
+
+gem 'acts-as-taggable-on'
+

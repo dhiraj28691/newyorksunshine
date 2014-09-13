@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: bd476853cce454c0c83b5511ae11699df5b7b266
+  revision: 281d62876e1d3ec629b5b64969e9c381a738e3da
   branch: dev
   specs:
     spree_newyorksunshine (2.3.1)
@@ -131,6 +131,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.4.1)
+      activerecord (>= 3.2, < 5)
     acts_as_list (0.3.0)
       activerecord (>= 3.0)
     arel (5.0.1.20140414130214)
@@ -310,6 +312,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   autoprefixer-rails
   cocoon
   coffee-rails (~> 4.0.0)
