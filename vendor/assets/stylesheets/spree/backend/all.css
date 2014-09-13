@@ -9,4 +9,5 @@
  *= require_self
  *= require_tree .
  *= require spree/backend/spree_newyorksunshine
+ *= require spree/backend/skeleton_widescreen
 */
