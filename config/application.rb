@@ -46,14 +46,14 @@ module Newyorksunshine
     #   authentication:       'plain',
     #   enable_starttls_auto: true  }
 
-    config.action_mailer.smtp_settings = {
-        address:              => "mail.buddy.io",
-        port:                 => 26,
-        enable_starttls_auto: => false,
-        authentication:       => "plain",
-        user_name:            => "support+buddy.io",
-        password:             => "password"
-    }
+    # config.action_mailer.smtp_settings = {
+    #     address:              => "mail.buddy.io",
+    #     port:                 => 26,
+    #     enable_starttls_auto: => false,
+    #     authentication:       => "plain",
+    #     user_name:            => "support+buddy.io",
+    #     password:             => "password"
+    # }
 
   end
 end
