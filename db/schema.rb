@@ -11,20 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913200817) do
+ActiveRecord::Schema.define(version: 20140915204903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "lookbooks", force: true do |t|
-    t.string  "name"
-    t.string  "slug"
-    t.text    "content"
-    t.date    "available_on"
-    t.boolean "published"
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
   end
 
-  add_index "lookbooks", ["slug"], name: "index_lookbooks_on_slug", using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -207,7 +210,14 @@ ActiveRecord::Schema.define(version: 20140913200817) do
   create_table "spree_lookbooks", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "slug"
+    t.text     "content"
+    t.datetime "available_on"
+    t.boolean  "published",    default: true
   end
+
+  add_index "spree_lookbooks", ["slug"], name: "index_spree_lookbooks_on_slug", unique: true, using: :btree
 
   create_table "spree_option_types", force: true do |t|
     t.string   "name",         limit: 100
@@ -665,6 +675,16 @@ ActiveRecord::Schema.define(version: 20140913200817) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spree_slides", force: true do |t|
+    t.text     "embed_code"
+    t.integer  "order"
+    t.integer  "lookbook_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_slides", ["lookbook_id"], name: "index_spree_slides_on_lookbook_id", using: :btree
 
   create_table "spree_state_changes", force: true do |t|
     t.string   "name"
