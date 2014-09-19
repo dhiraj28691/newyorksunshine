@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915204903) do
+ActiveRecord::Schema.define(version: 20140916194103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -675,6 +675,15 @@ ActiveRecord::Schema.define(version: 20140915204903) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spree_slide_images", force: true do |t|
+    t.integer  "order"
+    t.integer  "spree_slide_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_slide_images", ["spree_slide_id"], name: "index_spree_slide_images_on_spree_slide_id", using: :btree
 
   create_table "spree_slides", force: true do |t|
     t.text     "embed_code"
