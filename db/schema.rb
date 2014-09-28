@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916194103) do
+ActiveRecord::Schema.define(version: 20140926154137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -215,6 +215,7 @@ ActiveRecord::Schema.define(version: 20140916194103) do
     t.text     "content"
     t.datetime "available_on"
     t.boolean  "published",    default: true
+    t.integer  "aspect_ratio"
   end
 
   add_index "spree_lookbooks", ["slug"], name: "index_spree_lookbooks_on_slug", unique: true, using: :btree
@@ -678,12 +679,16 @@ ActiveRecord::Schema.define(version: 20140916194103) do
 
   create_table "spree_slide_images", force: true do |t|
     t.integer  "order"
-    t.integer  "spree_slide_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "slide_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
-  add_index "spree_slide_images", ["spree_slide_id"], name: "index_spree_slide_images_on_spree_slide_id", using: :btree
+  add_index "spree_slide_images", ["slide_id"], name: "index_spree_slide_images_on_slide_id", using: :btree
 
   create_table "spree_slides", force: true do |t|
     t.text     "embed_code"
@@ -691,6 +696,7 @@ ActiveRecord::Schema.define(version: 20140916194103) do
     t.integer  "lookbook_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "layout"
   end
 
   add_index "spree_slides", ["lookbook_id"], name: "index_spree_slides_on_lookbook_id", using: :btree
@@ -782,6 +788,16 @@ ActiveRecord::Schema.define(version: 20140916194103) do
   add_index "spree_stock_transfers", ["destination_location_id"], name: "index_spree_stock_transfers_on_destination_location_id", using: :btree
   add_index "spree_stock_transfers", ["number"], name: "index_spree_stock_transfers_on_number", using: :btree
   add_index "spree_stock_transfers", ["source_location_id"], name: "index_spree_stock_transfers_on_source_location_id", using: :btree
+
+  create_table "spree_stockists", force: true do |t|
+    t.integer  "region"
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_stores", force: true do |t|
     t.string   "name"
