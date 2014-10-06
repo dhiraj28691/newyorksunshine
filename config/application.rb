@@ -36,7 +36,13 @@ module Newyorksunshine
 
 
 
-    # config.action_mailer.delivery_method = :smtp
+    # enable email sending
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+
+
+
+    config.action_mailer.delivery_method = :smtp
     # config.action_mailer.smtp_settings = {
     #   address:              'smtp.gmail.com',
     #   port:                 587,
@@ -47,13 +53,27 @@ module Newyorksunshine
     #   enable_starttls_auto: true  }
 
     # config.action_mailer.smtp_settings = {
-    #     address:              => "mail.buddy.io",
-    #     port:                 => 26,
-    #     enable_starttls_auto: => false,
-    #     authentication:       => "plain",
-    #     user_name:            => "support+buddy.io",
-    #     password:             => "password"
+    #   address:              "mail.newyorksunshine.com",
+    #   port:                 26,
+    #   enable_starttls_auto: false,
+    #   authentication:       "plain",
+    #   user_name:            "orders@newyorksunshine.com",
+    #   password:             "sunshine123"
     # }
+
+    config.action_mailer.smtp_settings = {
+      address:              "mail.newyorksunshine.com",
+      port:                 26,
+      enable_starttls_auto: true,
+      authentication:       "plain",
+      user_name:            "newyorksunshine.com",
+      password:             "Sunshine(1986)"
+    }
+
+
+    config.action_mailer.default_options = {
+      from: "orders@newyorksunshine.com"
+    }
 
   end
 end

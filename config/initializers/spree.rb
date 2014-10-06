@@ -14,7 +14,7 @@ Spree.config do |config|
   config.products_per_page = 12
 
 
-
+  config.mails_from = "orders@newyorksunshine.com"
 
 
 
