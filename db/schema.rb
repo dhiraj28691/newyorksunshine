@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004221336) do
+ActiveRecord::Schema.define(version: 20141008130044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,13 +143,14 @@ ActiveRecord::Schema.define(version: 20141004221336) do
   add_index "spree_credit_cards", ["user_id"], name: "index_spree_credit_cards_on_user_id", using: :btree
 
   create_table "spree_feed_items", force: true do |t|
-    t.integer  "type"
+    t.integer  "category"
     t.string   "href"
     t.string   "superheading"
     t.string   "title"
     t.integer  "position",                default: 0, null: false
     t.integer  "product_id"
     t.integer  "post_id"
+    t.integer  "lookbook_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "attachment_file_name"
