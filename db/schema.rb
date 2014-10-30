@@ -225,17 +225,15 @@ ActiveRecord::Schema.define(version: 20141008130044) do
   add_index "spree_log_entries", ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type", using: :btree
 
   create_table "spree_lookbooks", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name"
     t.string   "slug"
     t.text     "content"
     t.datetime "available_on"
     t.boolean  "published",    default: true
     t.integer  "aspect_ratio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "spree_lookbooks", ["slug"], name: "index_spree_lookbooks_on_slug", unique: true, using: :btree
 
   create_table "spree_option_types", force: true do |t|
     t.string   "name",         limit: 100
@@ -378,12 +376,10 @@ ActiveRecord::Schema.define(version: 20141008130044) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
-    t.integer  "spree_post_id"
     t.integer  "post_id"
   end
 
   add_index "spree_post_images", ["post_id"], name: "index_spree_post_images_on_post_id", using: :btree
-  add_index "spree_post_images", ["spree_post_id"], name: "index_spree_post_images_on_spree_post_id", using: :btree
 
   create_table "spree_posts", force: true do |t|
     t.string   "title"
@@ -614,7 +610,7 @@ ActiveRecord::Schema.define(version: 20141008130044) do
   create_table "spree_shipments", force: true do |t|
     t.string   "tracking"
     t.string   "number"
-    t.decimal  "cost",                 precision: 10, scale: 2, default: 0.0
+    t.decimal  "cost",                 precision: 8,  scale: 2
     t.datetime "shipped_at"
     t.integer  "order_id"
     t.integer  "address_id"

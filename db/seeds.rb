@@ -13,3 +13,5 @@ Spree::Stockist.where(name: "Vanker Closet").first_or_create.update_attributes({
 Spree::Stockist.where(name: "Colette").first_or_create.update_attributes({ address: "213 Rue Saint Honoré, 75001 Paris, France", phone_number: "+33 1 55 35 33 90", link: "http://www.colette.fr/", region: 1 })
 Spree::Stockist.where(name: "WISM").first_or_create.update_attributes({ address: "5-17-20 Jingumae, Shibuya-Ku, 150-0001, Tokyo", phone_number: "+3 6418 5034", link: "http://wism-tyo.jp/", region: 1 })
 Spree::Stockist.where(name: "Barneys Japan").first_or_create.update_attributes({ address: "6-8-7 Ginza, Tokyo", phone_number: "+81 03 3289 1200", link: "http://www.barneys.co.jp/", region: 1 })
+
+Spree::RelationType.create(name: 'outfits', applies_to: 'Spree::Product')
