@@ -15,3 +15,9 @@ Spree::Stockist.where(name: "WISM").first_or_create.update_attributes({ address:
 Spree::Stockist.where(name: "Barneys Japan").first_or_create.update_attributes({ address: "6-8-7 Ginza, Tokyo", phone_number: "+81 03 3289 1200", link: "http://www.barneys.co.jp/", region: 1 })
 
 Spree::RelationType.create(name: 'outfits', applies_to: 'Spree::Product')
+
+# Returns & Exchanges
+Spree::Content.where(key: "returns_exchanges").first_or_create.update_attributes({ value: "<p>Items may be returned or exchanged within 15 business days of the item being received. Any item that you wish to return must not be worn or altered, and must still have all tags intact.</p>\r\r<p>For exchanges please include a note describing what items you would like to exchange for.</p>\r\r<p>Address:</p>\r\r<address>\rNew York Sunshine\r<br>\rattn: Returns &amp; Exchanges\r<br>\r28 Nugent Street\r<br>\rSouthampton, NY, 11968\r</address>\r\r<p>Please contact <a href=\"mailto:returns@newyorksunshine.com\">returns@newyorksunshine.com</a> with any questions</p>" })
+
+# About
+Spree::Content.where(key: "about").first_or_create.update_attributes({ value: "<p>New York Sunshine is the vision of John \"Sunshine\" Magaritis. Sunshine and a crew of friends sharing similar passions draw inspiration from all things New York. The culture, the fashion, the music, the ocean, the people&hellip; all of it. That’s why we live here.</p>\r\r<p>New York Sunshine started as a side project to make some extra summer cash, hand silk screening shirts and selling them damp and sandy out of the back of a surf van. The brand has grown since then, selling across the United States, as well as in Paris and Japan.</p>\r\r<p>We produce limited runs of high-quality clothing in the USA, striving to consistently create collections with an authentic New York feel.</p>\r\r<p>Please contact <a href=\"mailto:info@newyorksunshine.com\">info@newyorksunshine.com</a> for general inquiries.</p>" })
