@@ -21,3 +21,7 @@ Spree::Content.where(key: "returns_exchanges").first_or_create.update_attributes
 
 # About
 Spree::Content.where(key: "about").first_or_create.update_attributes({ value: "<p>New York Sunshine is the vision of John \"Sunshine\" Magaritis. Sunshine and a crew of friends sharing similar passions draw inspiration from all things New York. The culture, the fashion, the music, the ocean, the people&hellip; all of it. That’s why we live here.</p>\r\r<p>New York Sunshine started as a side project to make some extra summer cash, hand silk screening shirts and selling them damp and sandy out of the back of a surf van. The brand has grown since then, selling across the United States, as well as in Paris and Japan.</p>\r\r<p>We produce limited runs of high-quality clothing in the USA, striving to consistently create collections with an authentic New York feel.</p>\r\r<p>Please contact <a href=\"mailto:info@newyorksunshine.com\">info@newyorksunshine.com</a> for general inquiries.</p>" })
+
+
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)

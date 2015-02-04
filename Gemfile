@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# gem 'rails', '~> 4.1.2'
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -47,21 +46,24 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# gem 'spree', :github => 'spree/spree', :branch => '2-3-stable'
-gem 'spree', github: 'spree/spree', branch: '2-3-stable'
-gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '2-3-stable'
-gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '2-3-stable'
+# gem 'spree', :github => 'spree/spree', :branch => '2-4-stable'
+gem 'spree', github: 'spree/spree', branch: '2-4-stable'
+gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '2-4-stable'
+gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '2-4-stable'
+
+# reimplementing mail setting
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '2-4-stable'
 
 gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'dev'
 
 
 # bug in money gem, use latest
-gem 'money', '6.0.1'
+gem 'money'
 
 gem 'autoprefixer-rails'
 
 
-gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-3-stable'
+gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => '2-4-stable'
 
 gem 'mailchimp-api'
 
@@ -70,3 +72,5 @@ gem 'cocoon'
 
 
 gem 'acts-as-taggable-on'
+
+

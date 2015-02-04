@@ -7,20 +7,9 @@
 # config.setting_name = 'new value'
 Spree.config do |config|
   # Example:
-  # Uncomment to override the default site name.
-  # config.site_name = "New York Sunshine"
-  # config.allow_ssl_in_production = false
-
-  config.products_per_page = 12
-
-
+  # Uncomment to stop tracking inventory levels in the application
+  # config.track_inventory_levels = false
   config.mails_from = "orders@newyorksunshine.com"
-
-
-
 end
 
-Spree.user_class = "Spree::User"
-
-# Spree::Image.attachment_definitions[:attachment][:url] = ':path'
-# Spree::Image.attachment_definitions[:attachment][:path] = '/spree/products/:id/:style/:basename.:extension'
+Spree.user_class = "Spree::LegacyUser"
