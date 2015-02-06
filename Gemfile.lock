@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: f2ddfe5625337f7a6cc08e7145b6264bdc0c055b
+  revision: bf0c46a7c77081b47e3cba7df43777b650c804c5
   branch: dev
   specs:
     spree_newyorksunshine (2.3.1)
