@@ -54,7 +54,7 @@ gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '2-4-s
 # reimplementing mail setting
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '2-4-stable'
 
-gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'dev'
+gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'art'
 
 
 # bug in money gem, use latest
@@ -73,4 +73,7 @@ gem 'cocoon'
 
 gem 'acts-as-taggable-on'
 
+# For using paperclip, not sure if needed
+gem 'aws-sdk'
 
+gem 'pry'

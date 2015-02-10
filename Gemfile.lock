@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: bf0c46a7c77081b47e3cba7df43777b650c804c5
-  branch: dev
+  revision: 6856783b67d6b8beeb57a6bfb1b1fc12431c3b64
+  branch: art
   specs:
     spree_newyorksunshine (2.3.1)
       spree_core (>= 2.4)
@@ -149,6 +149,11 @@ GEM
       json
     awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
+    aws-sdk (1.59.1)
+      aws-sdk-v1 (= 1.59.1)
+    aws-sdk-v1 (1.59.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     builder (3.2.2)
     camertron-eprun (1.1.0)
@@ -163,6 +168,7 @@ GEM
     cocaine (0.5.5)
       climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.6)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -219,6 +225,7 @@ GEM
     mailchimp-api (2.0.6)
       excon (>= 0.16.0)
       json (>= 1.7.7)
+    method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -256,6 +263,10 @@ GEM
     premailer-rails (1.8.0)
       actionmailer (>= 3, < 5)
       premailer (~> 1.7, >= 1.7.9)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rabl (0.9.4.pre1)
       activesupport (>= 2.3.14)
     rack (1.5.2)
@@ -299,6 +310,7 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -345,6 +357,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   autoprefixer-rails
+  aws-sdk
   cocoon
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
@@ -353,6 +366,7 @@ DEPENDENCIES
   mailchimp-api
   money
   pg
+  pry
   rails (= 4.1.8)
   sass-rails (~> 4.0.2)
   sdoc
