@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.1.9'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -54,7 +54,7 @@ gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '2-4-s
 # reimplementing mail setting
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '2-4-stable'
 
-gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', :branch => 'art'
+gem 'spree_newyorksunshine', :github => 'michaelburtonray/spree_newyorksunshine', branch: "master"
 
 
 # bug in money gem, use latest
