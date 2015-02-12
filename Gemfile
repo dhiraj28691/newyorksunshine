@@ -74,6 +74,8 @@ gem 'cocoon'
 gem 'acts-as-taggable-on'
 
 # For using paperclip, not sure if needed
-gem 'aws-sdk'
+# gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
+
 
 gem 'pry'
