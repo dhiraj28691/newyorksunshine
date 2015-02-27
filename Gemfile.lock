@@ -382,7 +382,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   autoprefixer-rails
-  aws-sdk (< 2.0)
+  aws-sdk
   capistrano
   capistrano-bundler
   capistrano-passenger
