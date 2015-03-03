@@ -1,4 +1,4 @@
-require 'bundler/capistrano'
+require 'capistrano/bundler'
 
 # config valid only for current version of Capistrano
 lock '3.3.5'
