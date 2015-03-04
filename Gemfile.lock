@@ -386,7 +386,7 @@ DEPENDENCIES
   acts-as-taggable-on
   autoprefixer-rails
   aws-sdk
-  capistrano (= 3.4.0)
+  capistrano
   capistrano-bundler
   capistrano-passenger
   capistrano-rails
