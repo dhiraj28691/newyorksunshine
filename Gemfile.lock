@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: 577664e71e75dc7d34d046c7396894a969155f73
+  revision: 2d8523845a4295179ad0f114db564d5b02176a67
   branch: master
   specs:
     spree_newyorksunshine (2.4.4)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: e813b6488876e92f32bf52a8b01a7be1b39e545c
+  revision: 99d1a896bf9a51c0a0bb95d976e26ec68b6ba60d
   branch: 2-4-stable
   specs:
     spree (2.4.6.beta)
@@ -212,7 +212,7 @@ GEM
     devise-encryptable (0.1.2)
       devise (>= 2.1.0)
     erubis (2.7.0)
-    excon (0.44.3)
+    excon (0.44.4)
     execjs (2.3.0)
     ffaker (1.32.1)
     font-awesome-rails (4.3.0.0)
@@ -254,7 +254,7 @@ GEM
       money (~> 6.5.0)
     money (6.5.1)
       i18n (>= 0.6.4, <= 0.7.0)
-    multi_json (1.10.1)
+    multi_json (1.11.0)
     multi_xml (0.5.5)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
