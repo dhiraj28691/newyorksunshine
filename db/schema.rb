@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615053136) do
+ActiveRecord::Schema.define(version: 20160111210726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -412,6 +412,18 @@ ActiveRecord::Schema.define(version: 20150615053136) do
   end
 
   add_index "spree_preferences", ["key"], name: "index_spree_preferences_on_key", unique: true, using: :btree
+
+  create_table "spree_press_items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.integer  "position"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  add_index "spree_press_items", ["position"], name: "index_spree_press_items_on_position", using: :btree
 
   create_table "spree_prices", force: :cascade do |t|
     t.integer  "variant_id",                                      null: false
