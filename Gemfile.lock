@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: 952274216fb9ed5970c4bbcb365896679b08f406
+  revision: 674aa01335fc08f91addc595a01ca33ed5d2e825
   branch: master
   specs:
     spree_newyorksunshine (2.4.4)
@@ -432,3 +432,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   unicorn
+
+BUNDLED WITH
+   1.10.6
