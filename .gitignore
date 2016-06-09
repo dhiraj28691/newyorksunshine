@@ -16,6 +16,7 @@
 /tmp
 
 public/assets
+public/system
 
 # deploy script on prod server
 

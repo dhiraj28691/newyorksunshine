@@ -17,5 +17,5 @@ Spree.user_class = "Spree::LegacyUser"
 # Spree::Image.attachment_definitions[:attachment][:url] = ':path'
 # Spree::Image.attachment_definitions[:attachment][:path] = 'spree/products/:id/:style/:basename.:extension'
 
-Spree::Image.attachment_definitions[:attachment][:url] = 's3_domain_url'
-Spree::Image.attachment_definitions[:attachment][:path] = '/:class/:attachment/:id_partition/:style/:filename'
+# Spree::Image.attachment_definitions[:attachment][:url] = 's3_domain_url'
+# Spree::Image.attachment_definitions[:attachment][:path] = '/:class/:attachment/:id_partition/:style/:filename'
