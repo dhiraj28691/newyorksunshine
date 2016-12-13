@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
+  remote: git://github.com/human-nyc/spree_newyorksunshine.git
   revision: 8a9bd747a307e460b22831be30345b6298b766c8
   branch: master
   specs:
