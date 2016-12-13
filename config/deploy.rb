@@ -4,7 +4,7 @@ require 'capistrano/bundler'
 lock '3.7.0'
 
 set :application, 'newyorksunshine'
-set :repo_url, 'https://github.com/human-nyc/newyorksunshine.git'
+set :repo_url, 'git@github.com:human-nyc/newyorksunshine.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
