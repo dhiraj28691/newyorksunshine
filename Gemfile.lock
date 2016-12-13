@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/michaelburtonray/spree_newyorksunshine.git
-  revision: b95cc942ee26aff94e0d83818a834cc3e05ca3bb
+  revision: e5bfb5a2cc200ba380f5c250781bd268a46d460c
   branch: master
   specs:
     spree_newyorksunshine (2.4.4)
@@ -429,4 +429,4 @@ DEPENDENCIES
   unicorn
 
 BUNDLED WITH
-   1.12.4
+   1.12.5
