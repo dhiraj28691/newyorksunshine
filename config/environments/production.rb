@@ -80,21 +80,12 @@ Newyorksunshine::Application.configure do
 
   # Paperclip S3 settings
   config.paperclip_defaults = {
-    # :s3_credentials => {
-    #   :bucket => ENV['S3_CREDENTIALS_BUCKET'],
-    #   :access_key_id => ENV['S3_CREDENTIALS_ACCESS_KEY_ID'],
-    #   :secret_access_key => ENV['S3_CREDENTIALS_SECRET_ACCESS_KEY']
-    # }
-
+    :storage => :s3,
     :s3_credentials => {
-      :bucket => 'newyorksunshine-production',
-      :access_key_id => 'AKIAI5Z5EMPYNPX2G4BA',
-      :secret_access_key => '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'
+      :bucket => ENV['S3_BUCKET'],
+      :access_key_id => ENV['S3_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
     }
-
   }
-
-
-
 
 end
