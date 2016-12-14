@@ -83,3 +83,4 @@ gem 'aws-sdk', '< 2.0'
 gem 'pry'
 
 gem 'rails_12factor', group: :production
+gem 'browser', '~> 2.3.0'
