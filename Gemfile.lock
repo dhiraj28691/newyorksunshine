@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/human-nyc/spree_newyorksunshine.git
-  revision: d7983b02e62ee534a85885d949b1f6a8b2fcf638
+  revision: 997c82fa9a137ec1136971c5fe16b0aa1737737e
   branch: master
   specs:
     spree_newyorksunshine (2.4.4)
