@@ -58,7 +58,7 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 # reimplementing mail setting
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '3-0-stable'
 
-gem 'spree_newyorksunshine', github: 'human-nyc/spree_newyorksunshine', branch: "master"
+gem 'spree_newyorksunshine', github: 'human-nyc/spree_newyorksunshine', branch: 'master'
 
 
 # bug in money gem, use latest
