@@ -1,0 +1,108 @@
+#subscribe-wrapper {
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+  pointer-events: none;
+  transition: background $slow, transform 0ms $slow;
+  transform: translateY(-100%);
+  &.active {
+    background: hsla(0, 100%, 100%, 0.85);
+    display: block;
+    pointer-events: auto;
+    transform: none;
+    transition-duration: $fast;
+    transition-property: background;
+    transition-delay: 0ms;
+    form#subscribe-form {
+      opacity: 1;
+      transform: none;
+      transition-duration: $fast;
+    }
+  }
+}
+
+form#subscribe-form {
+  background: hsla(225, 27%, 6%, 0.85);
+  box-sizing: border-box;
+  margin: 90px auto;
+  padding: 2em;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-1em);
+  transition-property: opacity, transform;
+  transition-duration:  $fast;
+
+  @media #{$tablet-portrait} {
+    margin: 90px auto;
+    max-width: 580px;
+    padding: 90px;
+  }
+
+  p.logo-white {
+    margin: 2em 0 3em;
+    text-align: center;
+    span {
+      display: inline-block;
+      @extend %sprite;
+      background-position: 0 -150px;
+      background-size: 270px 180px;
+      height: 30px;
+      width: 246px;
+    }
+  }
+
+
+  input {
+    display: block;
+    margin: 2em 0;
+    width: 100%;
+    &[type="submit"] {
+      background: black;
+      border-color: black;
+      text-transform: uppercase;
+      transition-duration: $slow;
+      &:hover {
+        background-color: #E5E5E5;
+        border-color: #E5E5E5;
+        color: black;
+        transition-duration: $fast;
+      }
+    }
+  }
+
+  a.close {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @extend %sprite;
+    background-position: -168px -84px;
+    cursor: pointer;
+    transition: opacity $slow;
+    &:hover {
+      opacity: 0.50;
+      transition-duration: $fast;
+    }
+  }
+}
+
+ul#flash-errors {
+  color: hsl(0, 100%, 100%);
+  line-height: 1.5;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  &:not(:empty) {
+    margin: 2em 0 0;
+  }
+}
+
+body.about #subscribe-wrapper.active {
+  background: hsla(240, 50%, 10%, 0.85);
+}

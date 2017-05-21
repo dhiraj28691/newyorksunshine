@@ -1,0 +1,33 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:Content_items) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:new_content_item), new_admin_content_path, :icon => 'edit' %>
+<% end %>
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+      <th data-hook="admin_products_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td style="white-space:nowrap"><%= content.key.humanize %></td>
+        <td><%= content.value %></td>
+        <td class="actions">
+          <%= link_to "", edit_admin_content_path(content), :class => "edit fa fa-edit icon_link with-tip no-text" %>
+          <%= link_to "", admin_content_path(content), method: :delete, data: { confirm: 'Are you sure?' }, :class => "delete-resource fa fa-trash icon_link with-tip no-text" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,221 @@
+.cart-container {
+  margin: 0 8px;
+}
+
+
+body.orders.edit {
+
+  thead {
+    text-transform: uppercase;
+    display: none;
+    @media #{$tablet-portrait} {
+      display: table-header-group;
+    }
+  }
+
+  th.cart-item-quantity-header {
+    min-width: 100px;
+  }
+
+  tr {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    &.line-item {
+      border-top: 1px solid hsl(0, 0%, 90%);
+      @media #{$tablet-portrait} {
+        border-top: none;
+      }
+    }
+
+    @media #{$tablet-portrait} {
+      display: table-row;
+      position: static;
+    }
+  }
+
+
+  td {
+    text-align: left;
+    display: inline-block;
+    @media #{$tablet-portrait} {
+      display: table-cell;
+    }
+
+    &.cart-item-image {
+      float: left;
+      width: 50%;
+      @media #{$tablet-portrait} {
+        display: table-cell;
+        float: none;
+        width: auto;
+      }
+      a {
+        display: block;
+        img {
+          display: block;
+          transition-duration: $slow;
+          width: 100%;
+          max-width: 200px;
+        }
+        &:hover img {
+          opacity: 0.50;
+          transition-duration: $fast;
+        }
+      }
+    }
+
+    &.cart-item-description {
+      text-align: left;
+      a.item-name {
+        color: inherit;
+        display: inline-block;
+        line-height: normal;
+        text-decoration: none;
+        width: calc(50% - 42px);
+        @media #{$tablet-portrait} {
+          padding: 14px 0 14px;
+          width: auto;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.cart-item-variant {
+      text-align: left;
+    }
+    &.cart-item-quantity {
+      @media #{$tablet-portrait} {
+        width: 20px;
+      }
+    }
+
+
+    &.cart-item-description,
+    &.cart-item-variant,
+    &.cart-item-price {
+      display: block;
+      @media #{$tablet-portrait} {
+        display: table-cell;
+      }
+    }
+
+    &.cart-item-quantity:before {
+      content: "Quantity: ";
+    }
+
+    &.cart-item-total {
+      display: none;
+      @media #{$tablet-portrait} {
+        display: table-cell;
+      }
+    }
+
+
+    &.cart-item-delete {
+      // background: red;
+      text-align: right;
+      // margin: -10px;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @media #{$tablet-portrait} {
+        margin: 0;
+        padding: 0.25em;
+        position: static;
+        top: auto;
+        right: auto;
+      }
+    }
+
+  }
+
+  input.line_item_quantity {
+
+    background: hsl(0, 0%, 90%);
+    border: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    padding-right: 0.25em;
+    text-align: center;
+    width: 4em;
+  }
+
+
+  a.delete {
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    transition: opacity $slow;
+    width: 42px;
+    height: 42px;
+    &:before {
+      content: "";
+      display: block;
+      @extend %sprite;
+      background-position: -84px -126px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+    }
+    &:hover {
+      opacity: 0.50;
+      transition-duration: $fast;
+    }
+  }
+
+  .cart-buttons {
+    margin: 0 8px;
+    @media #{$tablet-portrait} {
+      display: flex;
+      margin: 0;
+      .side {
+        flex: 1 1 50%;
+        &.left {
+          text-align: left;
+        }
+        &.right {
+          text-align: right;
+        }
+      }
+    }
+
+
+
+
+    input#order_coupon_code {
+      width: 100%;
+      @media #{$tablet-portrait} {
+        width: 20em;
+      }
+
+      &::-webkit-input-placeholder { text-transform: uppercase }
+      &:-moz-placeholder { text-transform: uppercase }
+      &::-moz-placeholder { text-transform: uppercase }
+      &:-ms-input-placeholder { text-transform: uppercase }
+    }
+
+
+    .button {
+      box-sizing: border-box;
+      margin: 0.25em 0;
+      text-align: center;
+      width: 100%;
+      @media #{$tablet-portrait} {
+        width: auto;
+      }
+
+    }
+
+  }
+}

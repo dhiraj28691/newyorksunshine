@@ -1,0 +1,26 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:Art) %>
+<% end %>
+
+
+
+<%= @artist_statement %>
+<p>
+<%= link_to "Edit", edit_admin_artists_statement_path, class: "button" %></p>
+
+<hr>
+
+<p><%= button_link_to "New Work", new_admin_work_path, class: "btn-success", icon: 'add' %></p>
+
+
+<div class="works">
+  <% @admin_works.each do |admin_work| %>
+    <div class="work">
+      <%= image_tag admin_work.attachment %>
+      <div class="actions">
+        <%= link_to 'Edit', edit_admin_work_path(admin_work) %>
+        <%= link_to 'Destroy', admin_work_path(admin_work), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,140 @@
+.feed-group {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  html.no-flexbox & {
+    display: block;
+    font-size: 0;
+  }
+  a {
+    img {
+      background: white;
+      display: block;
+      width: 100%;
+    }
+
+    &.loading {
+      // pointer-events: none;
+      &:after {
+        background: hsla(0, 0%, 100%,0.99);
+      }
+    }
+
+  }
+}
+
+.feed-item,
+a.product,
+span.product {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: white;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: calc(100%/3);
+  @media #{$mobile-landscape} {
+    width: calc(100%/3);
+  }
+  @media #{$tablet-portrait} {
+    width: calc(100%/3);
+  }
+  @media #{$desktop} {
+    width: calc(100%/3);
+  }
+  &.loading,
+  &:hover {
+    .info {
+      background: hsla(0, 0%, 100%, 0.95);
+      color: $matteBlack;
+      transition-duration: $fast;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    border: 8px solid white;
+    @media #{$tablet-portrait} {
+      border-width: 32px;
+      box-sizing: border-box;
+    }
+  }
+
+
+  .info {
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: transparent;
+    text-align: center;
+    transition-duration: $slow;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+}
+
+.clearfix {
+  clear: both;
+}
+
+nav.pagination {
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  transition-duration: $slow;
+
+  &:last-child {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  span {
+    display: none;
+    &.next {
+      display: block;
+      a {
+        background-color: black;
+        margin: auto;
+        display: block;
+        position: relative;
+        text-indent: -9999px;
+        width: 126px;
+        height: 42px;
+        transition: background-color $slow;
+        &:after {
+          background-position: -126px -84px;
+          content: "";
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 42px;
+          width: 42px;
+          height: 42px;
+          @extend %sprite;
+        }
+        &:hover {
+          background-color: #E5E5E5;
+          transition-duration: $fast;
+        }
+      }
+    }
+  }
+
+
+  & + .feed-group {
+    margin-top: -42px;
+  }
+}

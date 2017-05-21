@@ -1,0 +1,64 @@
+<% cache [current_currency, @product] do %>
+
+  <div class="top">
+
+    <div id="product-images">
+      <div id="main-image" data-hook>
+        <%= render :partial => 'image' %>
+      </div>
+      <%= render :partial => 'thumbnails' %>
+    </div>
+
+    <div class="product-info">
+      <!--
+      <div class="breadcrumbies">
+        <a href="/products">All</a>
+        <% if taxon = @product.taxons.first %>
+          &nbsp;>&nbsp;
+          <a href="<%= seo_url(taxon) %>"><%= taxon.name %></a>
+        <% end %>
+        &nbsp;>&nbsp;
+        <a class="strike" href="<%= product_path(@product) %>"><%= accurate_title %></a>
+      </div>
+      -->
+
+      <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
+      <%= render :partial => 'promotions' %>
+
+      <p class="product-description">
+        <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+      </p>
+
+
+      <%= render :partial => 'cart_form' %>
+
+      <%= render :partial => 'sharing' %>
+
+      <%= render :partial => 'properties' %>
+
+    </div>
+
+  </div>
+
+  <% if @product.outfits.length > 0 %>
+    <div class="recommended-products">
+      <h4>Recommended</h4>
+
+      <% @product.outfits.each do |product| %>
+
+        <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product" }) do %>
+          <%= product_image(product, :itemprop => "image", :class => "product-image") %>
+          <div class="info">
+            <div>SHOP</div>
+            <%= product.name %>
+          </div>
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+  <% end %>
+
+<% end %>
+

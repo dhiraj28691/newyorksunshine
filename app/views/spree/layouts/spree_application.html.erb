@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html id="spree-application" class="loading" lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head>
+    <%= render :partial => 'spree/shared/head' %>
+  </head>
+  <body id="<%= controller.controller_name %><%= controller.action_name != 'index' ? "_#{controller.action_name}" : '' %>"
+    class="<%= controller.controller_name %><%= controller.action_name != 'index' ? " #{controller.action_name}" : '' %>">
+
+    <%= render :partial => 'spree/shared/header' %>
+
+    <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
+      <div class="video-container">
+        <iframe id="<%= 'home-video' unless (browser.platform.ios? || browser.device.mobile?) %>"
+          src="https://player.vimeo.com/video/195127345?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+          width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+        </iframe>
+      </div>
+
+        <!-- <video id="home-video" preload="auto" autoplay="true" loop="true">
+          <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.mp4" type="video/mp4">
+          <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.webm" type="video/webm">
+          <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.ogv" type="video/ogg">
+        </video> -->
+      <!-- </div> -->
+    <% else %>
+
+      <div id="wrapper" class="row" data-hook>
+
+        <div class="product-background"></div>
+
+        <%= yield :top %>
+
+        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content">
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+      </div>
+
+      <%= render :partial => 'spree/shared/footer' %>
+
+      <%= render :partial => 'spree/shared/subscribe_form' %>
+    <% end %>
+
+    <%= render :partial => 'spree/shared/google_analytics' %>
+    <script>
+      Spree.api_key = <%= raw(try_spree_current_user.try(:spree_api_key).to_s.inspect) %>;
+    </script>
+
+  </body>
+</html>

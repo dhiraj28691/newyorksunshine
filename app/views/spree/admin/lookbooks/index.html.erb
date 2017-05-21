@@ -1,0 +1,54 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_lookbooks) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_lookbook), new_object_url, { :remote => true, :icon => 'plus', :id => 'admin_new_lookbook', class: "btn-success" } %>
+<% end if can?(:create, Spree::Lookbook) %>
+
+
+
+<div id="new_lookbook_wrapper" class="table" data-hook=""></div>
+
+<% if @lookbooks.any? %>
+
+  <table id="listing_lookbooks" class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Slides</th>
+        <th>Available On</th>
+        <th>Aspect Ratio</th>
+        <th data-hook="admin_products_index_header_actions" class="actions"></th>
+      </tr>
+    <tbody>
+      <% @lookbooks.each do |lookbook| %>
+
+        <tr>
+          <td><%= lookbook.name %></td>
+          <td><%= link_to "Slides (#{lookbook.slides.length})", admin_lookbook_slides_path(lookbook) %></td>
+          <td>
+            <% if defined? lookbook.available_on %>
+            <%= lookbook.available_on.to_formatted_s(:nice) %>
+            <% end %>
+          </td>
+
+          <td>
+            <%= lookbook.aspect_ratio %>
+          </td>
+
+          <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
+            <%= link_to_edit lookbook, no_text: true, class: 'edit' %>
+            <%= link_to_delete lookbook, no_text: true %>
+          </td>
+
+        </tr>
+
+      <% end %>
+
+    </tbody>
+  </table>
+
+<% else %>
+  <p>No Lookbooks found. <%= link_to "Add one", new_admin_lookbook_path %>!</p>
+<% end %>

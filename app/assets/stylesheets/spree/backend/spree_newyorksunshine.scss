@@ -1,0 +1,69 @@
+/*
+Placeholder manifest file.
+the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/backend/all.css'
+*/
+
+
+@import "util/draggable";
+
+// $fast: 400ms;
+// $slow: 800ms;
+
+// $highlight: #9fc820;
+
+@import "variables";
+@import "feed_items";
+@import "about";
+@import "surf_club_images";
+@import "works";
+@import "lookbook";
+
+table tbody tr td.actions {
+  white-space: nowrap;
+}
+
+#admin-menu li a {
+  padding: 25px 0;
+}
+
+form.new_feed_item,
+form.edit_feed_item {
+  .field-group {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  #feed_item_attachment_field {
+    display: none;
+  }
+
+  .field-group.active ~ #feed_item_attachment_field {
+    display: block;
+  }
+}
+
+tbody {
+  tr {
+    &:first-child th,
+    &:first-child td {
+      border-top: 1px solid $color-border;
+    }
+    &:nth-child(even) td {
+      background-color: $color-tbl-even;
+
+      img {
+        border: 1px solid very-light($color-3, 6);
+      }
+    }
+
+    &:hover td {
+      background-color: very-light($color-3, 5);
+
+      // img { border: 1px solid $color-border }
+    }
+
+
+  }
+}

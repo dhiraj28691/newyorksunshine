@@ -1,0 +1,80 @@
+body.about {
+  background: #0D1017 url("//newyorksunshine-production.s3.amazonaws.com/about/about.jpg") center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  header {
+    background: transparent;
+  }
+
+  #wrapper {
+    margin: 0 8px;
+    background-size: cover;
+    color: white;
+  }
+
+  #content {
+    box-sizing: border-box;
+    text-align: left;
+    max-width: 480px;
+    img {
+      margin: 0 32px 32px 32px;
+      width: calc(100% - 64px);
+      @media #{$tablet-portrait} {
+        float: left;
+        width: 57%%;
+      }
+
+      // @media #{$widescreen} {
+      //   margin: 0 64px 64px 64px;
+      // }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p + p {
+      margin-top: 2em;
+    }
+  }
+
+
+}
+
+body.about,
+body.dark {
+  header.pinned {
+    background: hsla(0, 100%, 0%, 0.85);
+  }
+
+  label#equivalent {
+    background-position: -168px -126px;
+  }
+
+  h1#logo a {
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  nav.main-nav a {
+    color: white;
+  }
+
+  nav.footer-nav a,
+  nav.footer-nav span {
+    color: white;
+  }
+
+
+}
