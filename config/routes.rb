@@ -1,63 +1,81 @@
 Newyorksunshine::Application.routes.draw do
-
-  # This line mounts Spree's routes at the root of your application.
-  # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
-  # If you would like to change where this engine is mounted, simply change the :at option to something different.
-  #
-  # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+end
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+Spree::Core::Engine.add_routes do
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  concern :images do
+    resources :images
+  end
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  namespace :admin do
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    put 'feed_items', to: 'feed_items#update_batch', as: 'update_batch_feed_items'
+    resources :feed_items
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    put 'surf_club_images', to: 'surf_club_images#update_batch', as: 'update_batch_suf_club_images'
+    resources :surf_club_images
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+    # resources :lookbooks, shallow: true do
+    #   resources :slides, shallow: true do
+    #     resources :slide_images
+    #   end
+    # end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+    resources :lookbooks do
+      put 'slides', to: 'slides#update_batch', as: 'update_batch_slides'
+      resources :slides
+      # resources :slides, as: 'slidezs'
+    end
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    resources :press_items
+
+    resources :posts do
+      resources :post_images
+    end
+
+    put 'stockists/sort', to: 'stockists#sort', as: 'sort_stockists'
+    resources :stockists
+
+    resources :contents
+    resource :about
+    resource :returns_exchanges
+
+    # Art section
+    resource :art, only: [:show]
+    resource :artists_statement
+    resources :works
+  end
+
+
+  # Add your extension routes here
+  # get 'lookbooks', :to => 'lookbooks#index'
+  # get 'lookbooks/:id', :to => 'lookbooks#show'
+
+  resources :lookbooks
+
+  get 'news', to: 'news#index'
+  get 'tagged/:tag', to: 'news#index', as: :tag
+  get 'post/:id', to: 'news#show', as: :post
+
+  # resources :posts
+
+  # This needs to change
+  # get 'tagged/:tag', :to => 'news#tagged'
+
+  get 'press', to: 'press#index'
+
+  get 'art', :to => 'arts#index'
+
+  get 'stockists', :to => 'stockists#index'
+
+  get 'surfclub', :to => 'surfclub#index'
+
+  get 'about', :to => 'about#index'
+
+  get 'returns-exchanges', :to => 'returns_exchanges#index'
+
+  post 'subscribe' => 'subscribe#process_form'
+
 end

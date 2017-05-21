@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:stockists) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_stockist), new_object_url, icon: 'plus', class: "btn-success" %>
+<% end %>
+
+
+
+<% @stockists.each do |stockist_region, stockists| %>
+
+  <h2><%= stockist_region %></h2>
+
+  <%= render :partial => "datatable", :locals => { :stockists => stockists } %>
+
+<% end %>

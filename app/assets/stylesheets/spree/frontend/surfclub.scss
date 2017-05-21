@@ -1,0 +1,64 @@
+@import 'spree/frontend/variables';
+
+body.surfclub {
+  address {
+    font-style: normal;
+    text-align: center;
+    @media #{$tablet-portrait} {
+      margin: 5% 0 0 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    & + a img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .surfclub-map {
+    display: block;
+    max-width: 720px;
+    margin: 15px auto;
+  }
+  #content {
+  }
+  #content img {
+  }
+
+  .photos {
+    font-size: 0;
+    // display: flex;
+    // flex-wrap: wrap;
+    align-items: flex-start;
+    column-count: 2;
+    column-gap: 8px;
+    margin: 0 8px;
+
+    @media #{$tablet-portrait} {
+      column-gap: 32px;
+      margin: 0 32px;
+    }
+    @media #{$desktop} {
+      // column-count: 3;
+      column-gap: 64px;
+      margin: 0 32px;
+    }
+  }
+
+  img.photo {
+    // border: 16px solid white;
+    box-sizing: border-box;
+    display: inline-block;
+    // width: calc(100%/3);
+    width: 100%;
+    margin: 4px 0;
+    @media #{$tablet-portrait} {
+      border-width: 32px;
+      margin: 32px 0;
+    }
+  }
+}

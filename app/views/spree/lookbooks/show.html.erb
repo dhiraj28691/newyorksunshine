@@ -1,0 +1,18 @@
+<% content_for :top do %>
+
+  <%= render 'lookbook_sub_menu' %>
+
+  <div id="lookbook-wrapper">
+    <ul id="lookbook">
+      <% @lookbook.slides.each do |slide| %>
+        <li class="slide style-<%= slide.slide_images.length %>"><% slide.slide_images.each do |slide_image| %><%= image_tag slide_image.attachment(:full), class: "look style-#{slide.slide_images.length}" %><% end %>
+      <% end %>
+    </ul>
+
+    <div class="left capture"></div>
+    <div class="right capture"></div>
+  </div>
+
+  <ul id="thumbnails"><% @lookbook.slides.each_with_index do |slide, index| %><li class="thumbnail <%= index == 0 ? 'current' : nil %> style-<%= slide.slide_images.length %>"><% slide.slide_images.each do |slide_image| %><%= image_tag slide_image.attachment(:full), class: "look style-#{slide.slide_images.length}" %><% end %><% end %></div>
+
+<% end %>

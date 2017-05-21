@@ -1,0 +1,83 @@
+<%= form_for [:admin, @feed_item] do |f|  %>
+
+  <% if @feed_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feed_item.errors.count, "error") %> prohibited this feed_item from being saved:</h2>
+
+      <ul>
+      <% @feed_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.field_container :category do %>
+    <%= f.label :category %>
+    <br>
+    <%= f.select :category, options_for_select(@category_options, selected: @feed_item.category), { prompt: "Select a Category", class: 'select21' } %>
+  <% end %>
+
+  <div class="field-group" data-type="Product">
+    <%= f.field_container :product do %>
+      <%= f.label :product %>
+      <br>
+      <%= f.collection_select :product_id, @products, :id, :name, { prompt: true, class: 'select2' } %>
+    <% end %>
+  </div>
+
+  <div class="field-group" data-type="Lookbook">
+    <%= f.field_container :lookbook do %>
+      <%= f.label :lookbook %>
+      <br>
+      <%= f.collection_select :lookbook_id, @lookbooks, :id, :name, { prompt: true, class: 'select2' } %>
+    <% end %>
+  </div>
+
+  <div class="field-group" data-type="Post">
+    <%= f.field_container :post do %>
+      <%= f.label :post %>
+      <br>
+      <%= f.collection_select :post_id, @posts, :id, :title, { prompt: true, class: 'select2' } %>
+    <% end %>
+  </div>
+
+  <div class="field-group" data-type="Other">
+    <p>enter custom fields</p>
+
+    <%= f.field_container  :superheading do %>
+      <%= f.label :superheading %>
+      <br>
+      <%= f.text_field :superheading %>
+    <% end %>
+
+
+    <%= f.field_container  :title do %>
+      <%= f.label :title %>
+      <br>
+      <%= f.text_field :title %>
+    <% end %>
+
+
+    <%= f.field_container  :href do %>
+      <%= f.label :href, 'Link URL' %>
+      <br>
+      <%= f.text_field :href %>
+    <% end %>
+  </div>
+
+  <%= f.field_container  :attachment do %>
+    <%= f.label :attachment, 'Image' %>
+    <br>
+    <%= f.file_field :attachment %>
+    <% if f.object.attachment.exists? %>
+      <%= link_to image_tag(f.object.attachment.url(:thumb)), f.object.attachment.url %>
+    <% end %>
+  <% end %>
+
+  <%= f.check_box :delete_attachment %>
+  <%= f.label :delete_attachment %>
+
+  <%= f.submit %> or <%= link_to "Cancel", admin_feed_items_path %>
+
+<% end %>

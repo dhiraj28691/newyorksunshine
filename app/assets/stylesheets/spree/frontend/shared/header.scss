@@ -1,0 +1,176 @@
+@import 'spree/frontend/variables';
+
+h1#logo {
+  display: inline-block;
+  font: inherit;
+  margin: 0.50em 0;
+  position: relative;
+  z-index: 1;
+  @media #{$tablet-portrait} {
+    margin: 11px 0;
+  }
+}
+h1#logo a {
+  color: $matteBlack;
+  display: block;
+  font-size: 33px;
+  position: relative;
+  text-decoration: none;
+  text-indent: -9999px;
+  transition-duration: $slow;
+  transition-property: opacity;
+  // @extend %sprite;
+  // background-position: 0 -84px;
+  width: 84px;
+  height: 42px;
+  @media #{$desktop} {
+    background-position: 0 -168px;
+    width: 340px;
+  }
+  &:hover {
+    opacity: 0.50;
+    transition-duration: $fast;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    @extend %sprite;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: $slow;
+    transition-property: opacity;
+  }
+
+  &:before {
+    background-position: 0 -84px;
+    @media #{$desktop} {
+      background-position: 0 -168px;
+    }
+  }
+
+  &:after {
+    opacity: 0;
+    background-position: 0 -126px;
+    @media #{$desktop} {
+      background-position: 0 -210px;
+    }
+  }
+
+
+}
+
+label#equivalent {
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  margin: 0.50em 0;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  @extend %sprite;
+  background-position: -126px -126px;
+  @media #{$tablet-portrait} { display: none }
+}
+
+input#equivalent-check { display: none }
+
+nav.main-nav {
+  height: 0;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: $fast;
+  transition-property: opacity, height;
+  @media #{$tablet-portrait} {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    text-transform: uppercase;
+    padding-right: 10px;
+    pointer-events: none;
+    transition-duration: $fast;
+    transition-property: height, opacity;
+    margin-top: -5em;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  input#equivalent-check:checked + & {
+    // height: 432px;
+    height: 455px;
+    opacity: 1;
+    pointer-events: auto;
+    transition-property: height, opacity;
+    transition-delay: 0ms, $fast;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition-duration: $fast;
+    transition-property: background, color;
+    &.current {
+      text-decoration: line-through;
+    }
+  }
+	& > a,
+  & > span {
+    color: black;
+		display: block;
+    padding: 2em 1.85em;
+    @media #{$tablet-portrait} {
+      padding: 2em 1.85em;
+    }
+    @media #{$desktop} {
+      padding: 2em 1.85em;
+    }
+    @media #{$widescreen} {
+      padding: 2em 3.6em;
+    }
+    @media #{$tablet-portrait} {
+      display: inline-block;
+
+      &:nth-child(3) {
+        // margin-left: 20px;
+        margin-right: 42px;
+      }
+      &:nth-child(4) {
+        // margin-left: 42px;
+      }
+    }
+    @media #{$desktop} {
+      &:nth-child(3) {
+        margin-right: 170px;
+      }
+      &:nth-child(4) {
+        // margin-left: 170px;
+      }
+    }
+    body.taxons &.shop,
+    body.products &.shop {
+      text-decoration: line-through;
+    }
+    &:hover {
+      text-decoration: line-through;
+    }
+	}
+}
+
+
+#link-to-cart {
+  height: 5em;
+  padding: 0;
+  @media #{$tablet-portrait} {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+  }
+}
+a.cart-info {
+  display: block;
+  padding: 2em 1.85em;
+}

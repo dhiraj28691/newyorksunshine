@@ -1,0 +1,27 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:Surf_club_images) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_surf_club_image), new_admin_surf_club_image_path, { remote: false,  class: "btn-success", icon: 'add' } %>
+<% end if can?(:create, Spree::Slide) %>
+
+<div id="surf-club-images">
+
+  <% @surf_club_images.each do |surf_club_image| %>
+
+    <div class="surf-club-image" id="surfclubimages_<%= surf_club_image.id %>">
+
+      <%= image_tag surf_club_image.attachment(:large), :width => "50%" %>
+
+      <div class="actions">
+        <%= link_to "Edit", edit_admin_surf_club_image_path(surf_club_image), { "class" => "edit fa fa-edit icon_link with-tip no-text", "data-action" => "edit", "title" => "Edit"}  %>
+        <br>
+        <%= link_to "Delete", admin_surf_club_image_path(surf_club_image), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete", "data-remote" => false } %>
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>

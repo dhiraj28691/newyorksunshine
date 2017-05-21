@@ -1,0 +1,41 @@
+@import '../variables';
+
+.shipment {
+  // background: orange;
+  text-align: center;
+
+  .stock-location {
+    background: orange;
+    opacity: 0;
+  }
+
+  h4.stock-shipping-method-title {
+    // background: red;
+    text-align: center;
+  }
+
+
+  .item-name {
+    text-align: left;
+  }
+
+
+  ul.field.radios.shipping-methods {
+    list-style-type: none;
+    padding: 0;
+
+    display: inline-block;
+    text-align: left;
+    @media #{$tablet-portrait} {
+      text-align: center;
+      display: flex;
+    }
+
+    li.shipping-method {
+      flex: 1 1 auto;
+      label {
+        cursor: pointer;
+      }
+    }
+  }
+}

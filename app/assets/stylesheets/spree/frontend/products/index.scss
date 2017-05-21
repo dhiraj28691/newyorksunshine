@@ -1,0 +1,87 @@
+#products {
+
+  /* IVY */
+
+  .ivy-intro-text {
+    left: 50%;
+    margin-left: -200px;
+    position: absolute;
+    top: 95px;
+    width: 356px;
+    z-index: 10;
+    @media (min-width: 768px) {
+      top: 140px;
+      width: 400px;
+    }
+  }
+
+  #content {
+    margin: 265px auto;
+    @media (min-width: 768px) {
+      margin: 204px auto;
+    }
+  }
+
+  label#equivalent,
+  #social a:before {
+    -webkit-filter: invert(1);
+   filter: invert(1);
+  }
+
+  nav.main-nav > a {
+    color: #FFF;
+  }
+
+  /* END IVY */
+
+  .product-background {
+    background: asset_url('web-background.jpg') center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+
+  #wrapper {
+    min-height: 100vh;
+  }
+
+  .pagination,
+  #sidebar {
+    display: none;
+  }
+
+  .feed-group {
+    display: block;
+    text-align: center;
+  }
+
+  a.product {
+    margin: auto;
+    margin-bottom: 40px;
+    max-width: 650px;
+    width: auto;
+
+    img {
+      border: none;
+      background: none;
+    }
+
+    .info {
+      display: none;
+    }
+  }
+
+  footer {
+    width: 100vw;
+  }
+
+  nav.footer-nav {
+    a, span {
+      color: #FFF;
+    }
+  }
+}

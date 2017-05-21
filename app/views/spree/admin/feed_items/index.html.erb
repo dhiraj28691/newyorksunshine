@@ -1,0 +1,15 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:feed_items) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_feed_item), new_object_url, class: "btn-success", icon: 'add' %>
+<% end %>
+
+
+<div id="feed-items">
+  <% @feed_items.each do |feed_item| %>
+    <%= render :partial => "#{feed_item.category.downcase}_feed_item", :locals => { :feed_item => feed_item } %>
+  <% end %>
+</div>
+

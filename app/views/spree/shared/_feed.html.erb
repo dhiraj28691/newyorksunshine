@@ -1,0 +1,49 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+
+<% content_for :head do %>
+  <% if paginated_products.respond_to?(:num_pages) %>
+    <%= rel_next_prev_link_tags paginated_products %>
+  <% end %>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <% content_for :top do %>
+    <%= paginate paginated_products %>
+  <% end %>
+<% end %>
+
+<div class="feed">
+
+  <div class="feed-group">
+
+    <% @full_bleed.each do |item| %>
+
+      <% if item[:href] %>
+
+      <a href="<%= item[:href] %>" class="product">
+        <%= image_tag(item[:image_src]) %>
+        <div class="info">
+          <div><%= item[:cta_category] %></div>
+          <%= item[:cta_predicate] %>
+        </div>
+      </a>
+
+      <% else %>
+
+      <span class="product">
+        <%= image_tag(item[:image_src]) %>
+        <div class="info">
+          <div><%= item[:cta_category] %></div>
+          <%= item[:cta_predicate] %>
+        </div>
+      </span>
+
+      <% end %>
+
+    <% end %>
+  </div>
+
+</div>

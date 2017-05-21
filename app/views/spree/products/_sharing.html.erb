@@ -1,0 +1,5 @@
+<div id="social" class="product">
+  <a class="facebook icon" href="http://www.facebook.com/sharer/sharer.php?u=<%= product_url(@product) %>" target="_blank"></a>
+  <a class="twitter icon" href="http://twitter.com/share?text=<%= accurate_title %> by @NYSunshine3&url=<%= product_url(@product) %>" target="_blank"></a>
+  <a class="pinterest icon" href="http://pinterest.com/pin/create/button/?url=<%= product_url(@product) %>&media=<%= @product.images.order(:position).first.attachment rescue '' %>&description=<%= product_description(@product) rescue Spree.t(:product_has_no_description) %>" target="_blank"></a>
+</div>

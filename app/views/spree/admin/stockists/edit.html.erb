@@ -1,0 +1,13 @@
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:back_to_stockists_list), admin_stockists_url, :icon => 'arrow-left' %></li>
+  <li id="new_product_link">
+    <%= button_link_to Spree.t(:new_stockist), new_object_url, { :icon => 'plus', :id => 'admin_new_product' } %>
+  </li>
+<% end %>
+
+
+
+
+<h1>Editing admin_stockist</h1>
+
+<%= render 'form' %>

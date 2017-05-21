@@ -1,0 +1,133 @@
+@import 'spree/frontend/variables';
+
+nav.footer-nav {
+	display: flex;
+	flex-direction: column;
+	margin: 0 8px;
+	text-align: center;
+	text-transform: uppercase;
+	@media #{$tablet-portrait} {
+		flex-direction: row;
+		margin: 0 32px;
+	}
+
+	@media #{$desktop} {
+		margin: 0 32px;
+	}
+
+	@media #{$widescreen} {
+		margin: 0 64px;
+	}
+
+	span {
+		order: 1;
+		@media #{$tablet-portrait} {
+			order: initial;
+		}
+	}
+
+	a, span {
+		color: black;
+		display: inline-block;
+		// font-size: 11px;
+		padding: 0.75em 0;
+		text-decoration: none;
+
+		&:before {
+			@media #{$tablet-portrait} {
+				content: "|";
+				padding: 0 1.6em;
+			}
+
+		}
+
+		&:first-child {
+			&:before {
+				content: normal;
+			}
+		}
+
+		&:last-child {
+			@media #{$tablet-portrait} {
+				padding-right: 0;
+			}
+			padding-right: 0;
+		}
+
+		&[href]:hover {
+		  text-decoration: line-through;
+		}
+
+	}
+	.footer-right-aligned {
+		float: right;
+		border: 0;
+	}
+
+}
+
+#social {
+	text-align: center;
+	@media #{$desktop} {
+		display: flex;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	a {
+		display: inline-block;
+		color: #fff;
+		position: relative;
+		width: 38px;
+		height: 38px;
+
+		&:before,
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			content: "";
+			display: block;
+			margin: 4px;
+			transition-duration: $slow;
+			@extend %sprite;
+		}
+
+		&:before { background-color: white }
+		&:after  { background-color: black; opacity: 0; }
+
+		&:hover {
+			&:after {
+				opacity: 1;
+				transition-duration: $fast;
+			}
+		}
+	}
+}
+
+a.email {
+	&:before { background-position: 0 0 }
+	&:after  { background-position: 0 -30px }
+}
+
+a.facebook {
+	&:before { background-position: -30px 0 }
+	&:after  { background-position: -30px -30px }
+}
+
+a.instagram {
+	&:before { background-position: -60px 0 }
+	&:after  { background-position: -60px -30px }
+}
+
+a.twitter {
+	&:before { background-position: -90px 0 }
+	&:after { background-position: -90px -30px }
+}
+
+a.pinterest {
+	&:before { background-position: -120px 0 }
+	&:after { background-position: -120px -30px }
+}

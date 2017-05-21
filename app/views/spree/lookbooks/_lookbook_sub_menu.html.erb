@@ -1,0 +1,11 @@
+<% if @lookbooks.any? %>
+  <nav id="lookbook-links">
+    <% @lookbooks.each do |lookbook| %>
+      <%= link_to_unless_current lookbook.name, lookbook_path(lookbook) do %>
+        <span class="selected"><%= lookbook.name %></span>
+      <% end %>
+    <% end %>
+  </nav>
+<% else %>
+  <p style="text-align:center">No Lookbooks to display</p>
+<% end %>

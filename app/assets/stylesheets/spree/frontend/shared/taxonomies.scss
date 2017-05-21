@@ -1,0 +1,50 @@
+nav#taxonomies {
+  // background: red;
+  text-align: center;
+  display: flex;
+  // flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: uppercase;
+  h6.taxonomy-root {
+    display: inline-block;
+    font: inherit;
+    margin: 0;
+    padding: 1em;
+    background: black;
+    color: white;
+  }
+
+  a {
+    color: inherit;
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    &.current,
+    &:hover {
+      text-decoration: line-through;
+    }
+
+    body.products &.all {
+      text-decoration: line-through;
+    }
+  }
+}
+
+#sidebar_products_search {
+  display: none;
+  .navigation {
+    margin-bottom: 15px;
+  }
+
+  .filter-title {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 5px;
+    color: red;
+    font-size: larger;
+    line-height: 24px;
+  }
+}

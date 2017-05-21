@@ -1,0 +1,111 @@
+@import 'variables';
+
+h1 {
+  font-size: 2.25em;
+  font-weight: normal;
+}
+h4 { text-transform: uppercase }
+
+// h6 { font-size: 5em }
+
+a:not([href]),
+a.current {
+  text-decoration: line-through;
+}
+
+th {
+  border-bottom: 1px solid $gray;
+  text-align: left;
+}
+td {
+  box-sizing: border-box;
+  padding: 0.25em;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+input, textarea, keygen, select, button {
+  font: inherit;
+}
+
+
+input[type="text"] {
+  -webkit-appearance: none;
+  border-color: hsl(0, 100%, 100%);
+  border-radius: initial;
+  border-style: solid;
+  box-sizing: border-box;
+  font: inherit;
+  letter-spacing: 1px;
+  max-width: 100%;
+  padding: 14px 16px 14px;
+}
+
+.button,
+input[type="submit"] {
+  -webkit-appearance: none;
+  background: hsl(231, 23%, 11%);
+  border: 2px solid hsl(231, 23%, 11%);
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  line-height: normal;
+  padding: 14px 16px 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-property: background-color, border-color, color;
+  transition-duration: $slow;
+  &:hover {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+    color: black;
+    transition-duration: $fast;
+  }
+}
+
+
+button,
+input[type="number"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
+select {
+  border-style: solid;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  // flex: 1 1 50%;
+  width: 50%;
+  line-height: normal;
+  margin: 0.25em 0;
+  padding: 14px 16px 14px;
+}
+
+button,
+input[type="submit"] {
+  background: black;
+  border-color: black;
+  color: white;
+  &:hover {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+    color: black;
+  }
+}
+
+
+input[type="number"],
+input[type="tel"],
+input[type="text"],
+select {
+  background: #E5E5E5;
+  border-color: #E5E5E5;
+}
+
+
+:focus {
+  outline-color: black;
+}
