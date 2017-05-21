@@ -1,3 +1,5 @@
+@import '../variables';
+
 fieldset#order_details {
   .steps-data {
     @media #{$tablet-portrait} {

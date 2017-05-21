@@ -6,10 +6,10 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 
 @import "util/draggable";
 
-// $fast: 400ms;
-// $slow: 800ms;
+$fast: 400ms;
+$slow: 800ms;
 
-// $highlight: #9fc820;
+$highlight: #9fc820;
 
 @import "variables";
 @import "feed_items";
