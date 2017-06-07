@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dhiraj28691/spree_newyorksunshine.git
-  revision: a5fc7b9df6d03c6c4e26fff91136551f38a081d9
+  revision: 52a0feab0459503c7f8fca9a1501aae0bd8eea3b
   branch: master
   specs:
     spree_newyorksunshine (2.4.4)
